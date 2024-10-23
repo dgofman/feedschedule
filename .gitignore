@@ -43,12 +43,18 @@ app.*.map.json
 /android/app/release
 
 /android/*
+android/app/google-services.json
+android/app/src/*
 android/gradle/wrapper/*
 /ios/*
 /linux/*
 /macos/*
 /windows/*
 /web/*
+test/*
+pubspec.lock
+analysis_options.yaml
+.metadata
 
 # Custom configuration
 !android/app/
