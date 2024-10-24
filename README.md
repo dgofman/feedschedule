@@ -4,7 +4,9 @@ A new Flutter project for managing feeding schedules.
 
 # Initialize Project
 
-flutter create --project-name feedschedule -i objc -a java -t app .
+flutter create --project-name feedschedule -t app .
+
+flutter run --release
 
 ## Getting Started
 
@@ -56,3 +58,32 @@ Follow these steps to set up the project:
     (https://business.facebook.com/ and create new Business portfolio)
 12. Add your phone number and verify it.
 13. Click "Send Message" to complete the setup.
+
+## Setup IOs
+
+https://firebase.google.com/docs/flutter/setup?platform=ios
+
+Troubleshoot:
+
+1. cd ios
+2. open Podfile  (or open ios/Podfile)
+3. Add line on the top:
+   ```plaintext
+   platform :ios, '12.0'
+   source 'https://github.com/CocoaPods/Specs.git'
+   ```
+And
+
+   ```plaintext
+   target 'Runner' do
+      use_frameworks! :linkage => :static  # Add this line
+      flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+   ```
+4. rm -rf ~/.cocoapods
+5. pod deintegrate
+6. pod install --verbose
+   Note: You can start a clone process from another window
+   ```plaintext
+    Ctrl +C
+    cd ~/.cocoapods/repos
+    git clone --depth 1 https://github.com/CocoaPods/Specs.git master
